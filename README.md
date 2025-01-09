@@ -3,14 +3,20 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com)
 [![OpenAI](https://img.shields.io/badge/OpenAI-API-orange.svg)](https://openai.com/)
+[![Gemini](https://img.shields.io/badge/Google-Gemini-blue.svg)](https://deepmind.google/technologies/gemini/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A simple FastAPI application that wraps OpenAI's realtime session API for voice interactions.
+A FastAPI application that provides:
+- OpenAI's realtime session API for voice interactions
+- OpenAI chat completion proxy endpoint
+- Google Gemini chat completion proxy endpoint
 
 ## 🚀 Setup
 
 1. Clone this repository
-2. Create a `.env` file based on `.env_example` and add your OpenAI API key
+2. Create a `.env` file based on `.env_example` and add your API keys:
+   - `OPENAI_API_KEY`: Your OpenAI API key
+   - `GEMINI_API_KEY`: Your Google Gemini API key
 3. Install dependencies:
 ```bash
 pip install -r requirements.txt
@@ -60,9 +66,49 @@ Example:
 GET /session?model=gpt-4&voice=alloy
 ```
 
+### POST /open-chat-completion
+
+Proxy endpoint for OpenAI's chat completion API.
+
+Request Body:
+```json
+{
+    "model": "gpt-4",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Hello, how are you?"
+        }
+    ],
+    "temperature": 0.7
+}
+```
+
+### POST /gemini-chat-completion
+
+Proxy endpoint for Google's Gemini chat completion API.
+
+Request Body:
+```json
+{
+    "model": "gemini-1.5-flash",  // Optional, defaults to gemini-1.5-flash
+    "contents": [
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": "Hello, how are you?"
+                }
+            ]
+        }
+    ]
+}
+```
+
 ## ⚙️ Environment Variables
 
 - `OPENAI_API_KEY`: Your OpenAI API key
+- `GEMINI_API_KEY`: Your Google Gemini API key
 - `PORT`: Server port (default: 8000)
 
 ## 🔒 CORS Configuration
