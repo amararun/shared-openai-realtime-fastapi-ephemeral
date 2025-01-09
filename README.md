@@ -1,4 +1,4 @@
-# OpenAI Realtime Ephemeral Key Generator
+# AI API Proxy & OpenAI Realtime Session Manager
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com)
@@ -107,9 +107,9 @@ Request Body:
 
 ## ⚙️ Environment Variables
 
+Required API keys in your `.env` file:
 - `OPENAI_API_KEY`: Your OpenAI API key
 - `GEMINI_API_KEY`: Your Google Gemini API key
-- `PORT`: Server port (default: 8000)
 
 ## 🔒 CORS Configuration
 
