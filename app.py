@@ -18,7 +18,7 @@ app.add_middleware(
         "https://rex.tigzig.com",
         "https://rexrc.tigzig.com",
         "https://mf.tigzig.com",
-        "http://localhost:8123"   # For local development
+        "http://localhost:8000"   # For local development
     ],
     allow_credentials=True,
     allow_methods=["*"],
