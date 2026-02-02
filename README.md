@@ -130,3 +130,8 @@ app.add_middleware(
 ```
 
 Adjust the `allow_origins` list according to your security requirements. 
+## Author
+
+Built by [Amar Harolikar](https://www.linkedin.com/in/amarharolikar/)
+
+Explore 30+ open source AI tools for analytics, databases & automation at [tigzig.com](https://tigzig.com)
